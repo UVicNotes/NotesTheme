@@ -188,9 +188,10 @@
   /*
    * Inline code snippets must not wrap
    */
-  p > code {
+  p code, table code {
     white-space: nowrap;
     padding: 2px 4px;
+    border-radius: 2px;
   }
 
   /*
