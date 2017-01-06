@@ -77,8 +77,6 @@
   /* [tablet landscape-]: Add drop shadow */
   @include break-to-device(tablet landscape) {
     @include drop-shadow(1);
-
-    background: $primary;
     color: $white;
   }
 
@@ -90,19 +88,11 @@
   }
 
   /*
-   * Project logo
-   */
-  .logo img {
-    background: $white;
-    border-radius: 100%;
-  }
-
-  /*
    * Scale logo on hover
    */
-  &:hover .logo img,
-  &:focus .logo img {
-    @include drop-shadow(2);
+  &:hover .logo svg,
+  &:focus .logo svg {
+    filter: drop-shadow(0 2px 3px rgba(0,0,0,0.4));
   }
 }
 

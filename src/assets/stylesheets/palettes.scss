@@ -123,6 +123,28 @@
       /* [tablet landscape-]: Set background color */
       @include break-to-device(tablet landscape) {
         background: $color;
+        /*
+        * Project logo
+        */
+        .logo svg {
+          .primary {
+            fill: $white;
+          }
+          .mark {
+            fill: $color;
+          }
+        }
+      }
+      /*
+      * Project logo
+      */
+      .logo svg {
+        .primary {
+          fill: $color;
+        }
+        .mark {
+          fill: $white;
+        }
       }
     }
 
@@ -210,6 +232,22 @@
         color: $color;
       }
     }
+
+
+    /*
+     * Project information
+     */
+    .project {
+      /*
+      * Project logo
+      */
+      .logo svg {
+        .accent {
+          fill: $color;
+        }
+      }
+    }
+
 
     /*
      * Repository buttons
