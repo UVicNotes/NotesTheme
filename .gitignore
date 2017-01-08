@@ -33,4 +33,5 @@ site
 # Distribution files
 dist
 theme
+theme.zip
 mkdocs_material.egg-info
