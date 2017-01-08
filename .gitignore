@@ -32,4 +32,5 @@ site
 
 # Distribution files
 dist
+theme
 mkdocs_material.egg-info
