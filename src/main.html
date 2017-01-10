@@ -29,8 +29,8 @@
       {% endif %}
 
       <!-- Canonical -->
-      {% if canonical_url %}
-        <link rel="canonical" href="{{ canonical_url }}" />
+      {% if page.canonical_url %}
+        <link rel="canonical" href="{{ page.canonical_url }}" />
       {% endif %}
 
       <!-- Author -->
@@ -40,10 +40,10 @@
     {% endblock %}
 
     <!-- Open graph tags -->
-    <meta property="og:url" content="{{ canonical_url }}" />
+    <meta property="og:url" content="{{ page.canonical_url }}" />
     <meta property="og:title" content="{{ config.site_name }}"/>
     <meta property="og:image"
-      content="{{ canonical_url }}/{{ base_url }}/{{ config.extra.logo }}" />
+      content="{{ page.canonical_url }}/{{ base_url }}/{{ config.extra.logo }}" />
 
     <!-- Web application capability on iOS -->
     <meta name="apple-mobile-web-app-title" content="{{ config.site_name }}" />
