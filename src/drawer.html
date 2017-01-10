@@ -1,6 +1,6 @@
 <!-- Navigation -->
 <nav aria-label="Navigation">
-  {% set home = repo_url | default("/", true) %}
+  {% set home = config.repo_url | default("/", true) %}
 
   <!-- Project information -->
   <a href="{{ home }}" class="project">
@@ -20,7 +20,7 @@
       <!-- Project name and verison -->
       <div class="name">
         <strong>
-          UVicNotes &ndash; {{ site_name }}
+          UVicNotes &ndash; {{ config.site_name }}
         </strong>
 
         <!-- Project repository name -->
@@ -37,16 +37,16 @@
     <div class="wrapper">
 
       <!-- Repository -->
-      {% if repo_name == "GitHub" and repo_url %}
+      {% if config.repo_name == "GitHub" and config.repo_url %}
         <ul class="repo">
           <li class="repo-contribute">
-              <a href="{{ repo_url }}#contributing" target="_blank"
+              <a href="{{ config.repo_url }}#contributing" target="_blank"
                 title="Contirbute" data-action="contribute">
                 <i class="icon icon-note"></i> Contibute
               </a>
           </li>
           <li class="repo-stars">
-            <a href="{{ repo_url }}/stargazers" target="_blank"
+            <a href="{{ config.repo_url }}/stargazers" target="_blank"
               title="Stargazers" data-action="star">
               <i class="icon icon-star"></i> Stars
               <span class="count">&ndash;</span>

@@ -16,11 +16,11 @@
 
       <!-- Site title -->
       {% if page_title %}
-        <title>{{ page_title }} - {{ site_name }}</title>
+        <title>{{ page_title }} - {{ config.site_name }}</title>
       {% elif page_description %}
-        <title>{{ site_name }} - {{ page_description }}</title>
+        <title>{{ config.site_name }} - {{ page_description }}</title>
       {% else %}
-        <title>{{ site_name }}</title>
+        <title>{{ config.site_name }}</title>
       {% endif %}
 
       <!-- Site description -->
@@ -34,19 +34,19 @@
       {% endif %}
 
       <!-- Author -->
-      {% if site_author %}
-        <meta name="author" content="{{ site_author }}" />
+      {% if config.site_author %}
+        <meta name="author" content="{{ config.site_author }}" />
       {% endif %}
     {% endblock %}
 
     <!-- Open graph tags -->
     <meta property="og:url" content="{{ canonical_url }}" />
-    <meta property="og:title" content="{{ site_name }}"/>
+    <meta property="og:title" content="{{ config.site_name }}"/>
     <meta property="og:image"
       content="{{ canonical_url }}/{{ base_url }}/{{ config.extra.logo }}" />
 
     <!-- Web application capability on iOS -->
-    <meta name="apple-mobile-web-app-title" content="{{ site_name }}" />
+    <meta name="apple-mobile-web-app-title" content="{{ config.site_name }}" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style"
       content="black-translucent" />
@@ -135,8 +135,8 @@
       regular expressions out-of-the-box. Since there might be a slash at the
       end of the repository name, we just do a string comparison and kill it.
     -->
-    {% if repo_name == "GitHub" and repo_url %}
-      {% set repo_id = repo_url | replace("https://github.com/", "") %}
+    {% if config.repo_name == "GitHub" and config.repo_url %}
+      {% set repo_id = config.repo_url | replace("https://github.com/", "") %}
       {% if repo_id[-1:] == "/" %}
         {% set repo_id = repo_id[:-1] %}
       {% endif %}
@@ -181,7 +181,7 @@
 
           <!-- Headline -->
           {% if not h1 %}
-            <h1>{{ page_title | default(site_name, true)}}</h1>
+            <h1>{{ page_title | default(config.site_name, true)}}</h1>
           {% endif %}
 
           <!-- Article content -->

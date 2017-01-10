@@ -26,7 +26,7 @@
             {% endfor %}
           </span>
         {% endif %}
-        {{ page_title | default(site_name, true) }}
+        {{ page_title | default(config.site_name, true) }}
       </div>
     </div>
 
