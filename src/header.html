@@ -14,9 +14,9 @@
     <!-- Page title -->
     <div class="stretch">
       <div class="title">
-        {% if current_page %}
+        {% if page %}
           <span class="path">
-            {% for doc in current_page.ancestors %}
+            {% for doc in page.ancestors %}
               {% if doc.link %}
                 <a href="{{ doc.link | e }}">{{ doc.title }}</a>
                 <i class="icon icon-link"></i>

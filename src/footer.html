@@ -1,11 +1,11 @@
 <!-- Previous and next page -->
-{% if include_next_prev %}
+{% if (page.next_page or page.previous_page) %}
   <nav class="pagination"  aria-label="Footer">
 
     <!-- Previous page -->
     <div class="previous">
-      {% if previous_page %}
-        <a href="{{ previous_page.url }}" title="{{ previous_page.title }}">
+      {% if page.previous_page %}
+        <a href="{{ page.previous_page.url }}" title="{{ page.previous_page.title }}">
           <span class="direction">
             {{ config.extra.get("i18n", {}).prev | default("Previous") }}
           </span>
@@ -16,7 +16,7 @@
             </div>
             <div class="stretch">
               <div class="title">
-                {{ previous_page.title }}
+                {{ page.previous_page.title }}
               </div>
             </div>
           </div>
@@ -26,15 +26,15 @@
 
     <!-- Next page -->
     <div class="next">
-      {% if next_page %}
-        <a href="{{ next_page.url }}" title="{{ next_page.title }}">
+      {% if page.next_page %}
+        <a href="{{ page.next_page.url }}" title="{{ page.next_page.title }}">
           <span class="direction">
             {{ config.extra.get("i18n", {}).next | default("Next") }}
           </span>
           <div class="page">
             <div class="stretch">
               <div class="title">
-                {{ next_page.title }}
+                {{ page.next_page.title }}
               </div>
             </div>
             <div class="button button-next" role="button" aria-label="Next">
