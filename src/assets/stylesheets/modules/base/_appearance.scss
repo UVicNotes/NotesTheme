@@ -28,7 +28,7 @@
  * Device specific background hacks related to rubberband
  */
 body {
-  color: $black;
+  color: $grey-800;
 
   /* Hack [Chrome, Opera]: Set background color in Chrome and Opera */
   @supports (-webkit-appearance: none) {
