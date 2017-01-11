@@ -189,6 +189,13 @@
     .results .meta {
       background: $color;
     }
+
+    /*
+    * Admonition support
+    */
+    .admonition {
+      background-color: $color;
+    }
   }
 }
 
