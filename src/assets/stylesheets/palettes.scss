@@ -146,6 +146,13 @@
           fill: $white;
         }
       }
+      /*
+      * Color link on hover
+      */
+      & a:hover,
+      & a:focus {
+        color: $color;
+      }
     }
 
     /*
