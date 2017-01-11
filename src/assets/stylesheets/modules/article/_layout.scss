@@ -186,10 +186,12 @@
   /*
    * Inline code snippets must not wrap
    */
-  p code, table code {
-    white-space: nowrap;
-    padding: 2px 4px;
-    border-radius: 2px;
+  p, table, li {
+    code {
+      white-space: nowrap;
+      padding: 2px 4px;
+      border-radius: 2px;
+    }
   }
 
   /*

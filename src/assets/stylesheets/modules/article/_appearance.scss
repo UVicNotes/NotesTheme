@@ -53,8 +53,11 @@
   /*
    * Inline code
    */
-  p code, table code {
-    background: #eee;
+  p, table, li {
+    code {
+      color: $grey-700;
+      background: #eee;
+    }
   }
 
   /*
