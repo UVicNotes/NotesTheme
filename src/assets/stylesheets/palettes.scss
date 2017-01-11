@@ -181,6 +181,15 @@
       table th {
         background: mix($color, $white, 75%);
       }
+
+      /*
+      * Math
+      */
+      .MathJax {
+        &, & .mi {
+          color: $color;
+        }
+      }
     }
 
     /*
