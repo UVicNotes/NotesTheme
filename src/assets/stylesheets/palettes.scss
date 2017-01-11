@@ -153,19 +153,20 @@
      */
     .article {
 
+
+      /*
+      * Links
+      */
+      a {
+        color: $color;
+      }
+
       /*
        * Differing top and bottom rubberband backgrounds in iOS web application
        */
       .ios.standalone & {
         background: linear-gradient(
           to bottom, $white 50%, $color 50%);
-      }
-
-      /*
-       * Headlines, chapters, links and inline code
-       */
-      h1, h2, a {
-        color: $color;
       }
 
       /*
