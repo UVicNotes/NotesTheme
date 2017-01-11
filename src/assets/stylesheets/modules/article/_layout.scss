@@ -150,17 +150,29 @@
   }
 
   /*
+   * Lists
+   */
+  ul {
+    list-style: disc;
+  }
+
+  /*
    * Smaler top spacing for nested lists
    */
   li ul, li ol {
-    margin-top: 0.75em;
+    margin-top: 0.2em;
+    list-style: circle;
+
+    li {
+      margin-top: 0.4em;
+    }
   }
 
   /*
    * List elements
    */
   li {
-    margin-top: 0.75em;
+    margin-top: 0.6em;
     margin-left: 18px;
 
     /*
@@ -169,20 +181,6 @@
     p {
       display: inline;
     }
-  }
-
-  /*
-   * Add icon for elements of an unordered list
-   */
-  ul > li:before {
-    content: "\e602";
-    display: block;
-    float: left;
-    font-family: 'Icon';
-    font-size: 16px;
-    width: 1.2em;
-    margin-left: -1.2em;
-    vertical-align: -0.1em;
   }
 
   /*
