@@ -98,23 +98,6 @@
         href="{{ base_url }}/assets/stylesheets/palettes.css" />
     {% endif %}
 
-    <!-- Configure webfonts -->
-    {% if config.extra.font != "none" %}
-      {% set text = config.extra.get("font", {}).text | default("Ubuntu") %}
-      {% set code = config.extra.get("font", {}).code | default("Ubuntu Mono") %}
-      {% set font = text + ':400,700|' + code | replace(' ', '+') %}
-      <link rel="stylesheet" type="text/css"
-        href="https://fonts.googleapis.com/css?family={{ font }}" />
-      <style>
-        body, input {
-          font-family: '{{ text }}', Helvetica, Arial, sans-serif;
-        }
-        pre, code {
-          font-family: '{{ code }}', 'Courier New', 'Courier', monospace;
-        }
-      </style>
-    {% endif %}
-
     <!-- Custom stylesheets -->
     {% for path in extra_css %}
       <link rel="stylesheet" type="text/css" href="{{ path }}" />

@@ -28,31 +28,21 @@
  * Default font styles
  */
 body, input {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family:
+  /* System Variables   */ -apple-system, BlinkMacSystemFont,
+  /* Known System fonts */ "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+  /* Fallback Fonts     */ "Helvetica Neue", sans-serif;
   font-weight: 400;
 
   /* Enable font-smoothing in Webkit and FF */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  /*
-   * Use system fonts, if browser doesn't support webfonts
-   */
-  .no-fontface & {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  }
 }
 
 /*
  * Proportional fonts
  */
 pre, code, kbd {
-  font-family: 'Courier New', 'Courier', monospace;
-
-  /*
-   * Use system fonts, if browser doesn't support webfonts
-   */
-  .no-fontface & {
-    font-family: 'Courier New', 'Courier', monospace;
-  }
+  font-family: 'Monaco', 'Consolas', 'Courier New', 'Courier', monospace;
+  font-size: 90%;
 }
