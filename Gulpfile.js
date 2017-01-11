@@ -33,6 +33,7 @@ var clean       = require('del');
 var collect     = require('gulp-rev-collector');
 var compact     = require('gulp-remove-empty-lines');
 var concat      = require('gulp-concat');
+var debug       = require('gulp-debug');
 var favicons    = require("gulp-favicons");
 var ignore      = require('gulp-ignore');
 var gulpif      = require('gulp-if');
@@ -45,6 +46,7 @@ var notifier    = require('node-notifier');
 var plumber     = require('gulp-plumber');
 var postcss     = require('gulp-postcss');
 var rev         = require('gulp-rev');
+var rename      = require("gulp-rename");
 var sass        = require('gulp-sass');
 var sourcemaps  = require('gulp-sourcemaps');
 var svg2png     = require('gulp-svg2png');
@@ -58,6 +60,94 @@ var vinyl       = require('vinyl-paths');
 
 /* MkDocs server */
 var server = null;
+
+/* Material UI Colors */
+var colors = [
+  {
+    "name": "red",
+    "hex": "#f44336"
+  },
+  {
+    "name": "pink",
+    "hex": "#e91e63"
+  },
+  {
+    "name": "purple",
+    "hex": "#9c27b0"
+  },
+  {
+    "name": "deepPurple",
+    "hex": "#673ab7"
+  },
+  {
+    "name": "indigo",
+    "hex": "#3f51b5"
+  },
+  {
+    "name": "blue",
+    "hex": "#2196f3"
+  },
+  {
+    "name": "lightBlue",
+    "hex": "#03a9f4"
+  },
+  {
+    "name": "cyan",
+    "hex": "#00bcd4"
+  },
+  {
+    "name": "teal",
+    "hex": "#009688"
+  },
+  {
+    "name": "green",
+    "hex": "#4caf50"
+  },
+  {
+    "name": "lightGreen",
+    "hex": "#8bc34a"
+  },
+  {
+    "name": "lime",
+    "hex": "#cddc39"
+  },
+  {
+    "name": "yellow",
+    "hex": "#ffeb3b"
+  },
+  {
+    "name": "amber",
+    "hex": "#ffc107"
+  },
+  {
+    "name": "orange",
+    "hex": "#ff9800"
+  },
+  {
+    "name": "deepOrange",
+    "hex": "#ff5722"
+  },
+  {
+    "name": "brown",
+    "hex": "#795548"
+  },
+  {
+    "name": "grey",
+    "hex": "#9e9e9e"
+  },
+  {
+    "name": "blueGrey",
+    "hex": "#607d8b"
+  },
+  {
+    "name": "black",
+    "hex": "#000000"
+  },
+  {
+    "name": "white",
+    "hex": "#FFFFFF"
+  }
+];
 
 /* ----------------------------------------------------------------------------
  * Overrides
@@ -163,8 +253,10 @@ gulp.task('assets:modernizr', [
  * Create favicons
  */
 gulp.task('assets:icons', function() {
-  return gulp.src("src/assets/images/icon.svg")
+  return colors.map(function(color) {
+   gulp.src("src/assets/images/icon.svg")
     .pipe(svg2png())
+    .pipe(debug())
     .pipe(favicons({
         pipeHTML: false,
         icons: {
@@ -178,7 +270,12 @@ gulp.task('assets:icons', function() {
             yandex: false
         }
     }))
+    .pipe(rename(function (path) {
+      path.basename += "-" + color.name;
+    }))
+    .pipe(debug())
     .pipe(gulp.dest("dist/assets/images/"));
+  });
 });
 
 /*
