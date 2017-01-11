@@ -42,27 +42,33 @@
     <!-- Open graph tags -->
     <meta property="og:url" content="{{ page.canonical_url }}" />
     <meta property="og:title" content="{{ config.site_name }}"/>
-    <meta property="og:image"
-      content="{{ page.canonical_url }}/{{ base_url }}/{{ config.extra.logo }}" />
+    <meta property="og:image" content="{{ page.canonical_url }}/{{ base_url }}/{{ config.extra.logo }}" />
 
     <!-- Web application capability on iOS -->
     <meta name="apple-mobile-web-app-title" content="{{ config.site_name }}" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ base_url }}/assets/images/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ base_url }}/assets/images/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ base_url }}/assets/images/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ base_url }}/assets/images/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ base_url }}/assets/images/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ base_url }}/assets/images/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{ base_url }}/assets/images/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ base_url }}/assets/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ base_url }}/assets/images/apple-touch-icon-76x76.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
 
-    <!-- Web application icon on iOS -->
-    {% if config.extra.logo %}
-      <link rel="apple-touch-icon"
-        href="{{ base_url }}/{{ config.extra.logo }}">
-    {% endif %}
+    <!-- Chrome App -->
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ base_url }}/assets/images/android-chrome-192x192.png">
+    <meta name="mobile-web-app-capable" content="yes">
 
     <!-- Favicon -->
-    {% set favicon = favicon | default("assets/images/favicon.ico", true) %}
-    <link rel="shortcut icon" type="image/x-icon"
-      href="{{ base_url }}/{{ favicon }}" />
-    <link rel="icon" type="image/x-icon"
-      href="{{ base_url }}/{{ favicon }}" />
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ base_url }}/assets/images/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="230x230" href="{{ base_url }}/assets/images/favicon-230x230.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ base_url }}/assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ base_url }}/assets/images/favicon-96x96.png">
+    <link rel="shortcut icon" href="{{ base_url }}/assets/images/favicon.ico">
 
     <!-- Configure icons (placed here to omit issues with subdirectories) -->
     <style>

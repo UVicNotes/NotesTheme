@@ -33,6 +33,7 @@ var clean       = require('del');
 var collect     = require('gulp-rev-collector');
 var compact     = require('gulp-remove-empty-lines');
 var concat      = require('gulp-concat');
+var debug       = require('gulp-debug');
 var favicons    = require("gulp-favicons");
 var ignore      = require('gulp-ignore');
 var gulpif      = require('gulp-if');
