@@ -134,6 +134,13 @@
             fill: $color;
           }
         }
+        /*
+        * Color link on hover
+        */
+        & a:hover,
+        & a:focus {
+          color: $grey-200;
+        }
       }
       /*
       * Project logo

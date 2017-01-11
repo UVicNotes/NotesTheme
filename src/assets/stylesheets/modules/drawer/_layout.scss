@@ -221,9 +221,6 @@
     @include break-from-device(tablet portrait) {
       margin: 26px 0 0 5px;
     }
-    a {
-      color: $grey-600;
-    }
   }
 
   /*
