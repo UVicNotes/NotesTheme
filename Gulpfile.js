@@ -24,31 +24,33 @@
  * Imports
  * ------------------------------------------------------------------------- */
 
-var gulp       = require('gulp');
-var addsrc     = require('gulp-add-src');
-var args       = require('yargs').argv;
-var autoprefix = require('autoprefixer');
-var child      = require('child_process');
-var clean      = require('del');
-var collect    = require('gulp-rev-collector');
-var compact    = require('gulp-remove-empty-lines');
-var concat     = require('gulp-concat');
-var ignore     = require('gulp-ignore');
-var gulpif     = require('gulp-if');
-var mincss     = require('gulp-cssnano');
-var minhtml    = require('gulp-htmlmin');
-var minimage   = require('gulp-image-optimization');
-var modernizr  = require('gulp-modernizr');
-var mqpacker   = require('css-mqpacker');
-var notifier   = require('node-notifier');
-var plumber    = require('gulp-plumber');
-var postcss    = require('gulp-postcss');
-var rev        = require('gulp-rev');
-var sass       = require('gulp-sass');
-var sourcemaps = require('gulp-sourcemaps');
-var uglify     = require('gulp-uglify');
-var util       = require('gulp-util');
-var vinyl      = require('vinyl-paths');
+var gulp        = require('gulp');
+var addsrc      = require('gulp-add-src');
+var args        = require('yargs').argv;
+var autoprefix  = require('autoprefixer');
+var child       = require('child_process');
+var clean       = require('del');
+var collect     = require('gulp-rev-collector');
+var compact     = require('gulp-remove-empty-lines');
+var concat      = require('gulp-concat');
+var favicons    = require("gulp-favicons");
+var ignore      = require('gulp-ignore');
+var gulpif      = require('gulp-if');
+var mincss      = require('gulp-cssnano');
+var minhtml     = require('gulp-htmlmin');
+var minimage    = require('gulp-image-optimization');
+var modernizr   = require('gulp-modernizr');
+var mqpacker    = require('css-mqpacker');
+var notifier    = require('node-notifier');
+var plumber     = require('gulp-plumber');
+var postcss     = require('gulp-postcss');
+var rev         = require('gulp-rev');
+var sass        = require('gulp-sass');
+var sourcemaps  = require('gulp-sourcemaps');
+var svg2png     = require('gulp-svg2png');
+var uglify      = require('gulp-uglify');
+var util        = require('gulp-util');
+var vinyl       = require('vinyl-paths');
 
 /* ----------------------------------------------------------------------------
  * Locals
@@ -156,6 +158,29 @@ gulp.task('assets:modernizr', [
     .pipe(gulp.dest('dist/assets/javascripts'));
 });
 
+
+/*
+ * Create favicons
+ */
+gulp.task('assets:icons', function() {
+  return gulp.src("src/assets/images/icon.svg")
+    .pipe(svg2png())
+    .pipe(favicons({
+        pipeHTML: false,
+        icons: {
+            android: true,
+            appleIcon: true,
+            appleStartup: false,
+            coast: false,
+            favicons: true,
+            firefox: false,
+            windows: false,
+            yandex: false
+        }
+    }))
+    .pipe(gulp.dest("dist/assets/images/"));
+});
+
 /*
  * Copy static assets like images and webfonts.
  */
@@ -232,6 +257,7 @@ gulp.task('assets:build', [
   'assets:stylesheets',
   'assets:javascripts',
   'assets:modernizr',
+  'assets:icons',
   'assets:static',
   'assets:views'
 ]);
