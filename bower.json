@@ -26,6 +26,7 @@
   "devDependencies": {
     "bourbon": "^4.2.6",
     "quantum-colors": "^1.0.1",
-    "quantum-shadows": "^1.0.0"
+    "quantum-shadows": "^1.0.0",
+    "material-design-iconic-font": "^2.2.0"
   }
 }

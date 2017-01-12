@@ -19,9 +19,9 @@
             {% for doc in page.ancestors %}
               {% if doc.link %}
                 <a href="{{ doc.link | e }}">{{ doc.title }}</a>
-                <i class="icon icon-link"></i>
+                <i class="icon icon-chevron-right"></i>
               {% else %}
-                {{ doc.title }} <i class="icon icon-link"></i>
+                {{ doc.title }} <i class="icon icon-chevron-right"></i>
               {% endif %}
             {% endfor %}
           </span>
@@ -62,8 +62,7 @@
 
     <!-- Close search -->
     <div class="button button-close" role="button" aria-label="Close">
-      <label class="toggle-button icon icon-back"
-        for="toggle-search"></label>
+      <label class="toggle-button icon icon-arrow-left" for="toggle-search"></label>
     </div>
 
     <!-- Search form -->

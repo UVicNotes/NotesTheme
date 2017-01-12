@@ -130,9 +130,9 @@
    * Align permalinks on the right
    */
   .headerlink {
-    float: right;
-    margin-left: 20px;
+    margin-left: 12px;
     font-size: 14px;
+    content: "\e602";
 
     /*
      * Hide permalink to main headline

@@ -98,7 +98,8 @@ gulp.task('assets:stylesheets', function() {
         includePaths: [
           'bower_components/bourbon/app/assets/stylesheets/',
           'bower_components/quantum-colors/',
-          'bower_components/quantum-shadows/'
+          'bower_components/quantum-shadows/',
+          'bower_components/'
         ]
       }))
     .pipe(
@@ -193,7 +194,10 @@ gulp.task('assets:static', function() {
         progressive: true,
         interlaced: true
       })))
-    .pipe(addsrc.append('src/assets/{fonts,images}/*.{ico,eot,svg,ttf,woff}'))
+    .pipe(addsrc.append([
+      'src/assets/{fonts,images}/*.{ico,eot,svg,ttf,woff}',
+      'bower_components/material-design-iconic-font/dist/**/*.{ico,eot,svg,ttf,woff,woff2}'
+      ]))
     .pipe(gulp.dest('dist/assets/'));
 });
 
