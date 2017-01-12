@@ -97,8 +97,14 @@
    * Light permalinks
    */
   .headerlink {
-    color: $black-lighter;
+    font-size: 0;
     border: none;
+
+    &:before {
+      @extend .icon;
+      @extend .icon-link;
+      color: $black-lighter;
+    }
   }
 
   /*

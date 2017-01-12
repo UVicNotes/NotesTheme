@@ -187,7 +187,9 @@
        * Light permalinks
        */
       .headerlink {
-        color: $black-lighter;
+        &:before {
+          color: $black-lighter;
+        }
       }
 
       /*
@@ -261,6 +263,14 @@
       a:hover,
       a:focus {
         color: $color;
+      }
+      /*
+       * Hovered permalinks
+       */
+      .headerlink:hover {
+        &:before {
+          color: $color;
+        }
       }
     }
 

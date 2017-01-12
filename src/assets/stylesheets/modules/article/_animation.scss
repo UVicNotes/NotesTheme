@@ -31,6 +31,10 @@ pre span {
   transition: color .25s;
 }
 
+.headerlink:before {
+  transition: opacity .25s;
+}
+
 /*
  * Copyright and theme information
  */

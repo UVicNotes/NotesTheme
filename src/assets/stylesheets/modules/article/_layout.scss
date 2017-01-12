@@ -127,18 +127,31 @@
   }
 
   /*
-   * Align permalinks on the right
+   * Align permalinks
    */
   .headerlink {
-    margin-left: 12px;
-    font-size: 14px;
-    content: "\e602";
+    margin-left: 8px;
 
-    /*
-     * Hide permalink to main headline
-     */
-    h1 & {
-      display: none;
+    &:before {
+      font-size: 16px;
+      opacity: 0;
+    }
+  }
+  /*
+   * Hide permalink to main headline
+   */
+  h1 .headerlink {
+    display: none;
+  }
+  /*
+   * Show permalinks on hover
+   */
+  h2, h3 {
+    &:hover,
+    &:focus {
+      .headerlink:before {
+        opacity: 1;
+      }
     }
   }
 

@@ -27,7 +27,7 @@
 /*
  * Animate color on hover
  */
-a {
+a, a:before {
   transition: color .25s;
 }
 
