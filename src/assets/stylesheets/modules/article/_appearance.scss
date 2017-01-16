@@ -61,6 +61,15 @@
   }
 
   /*
+   * Math
+   */
+  .MathJax {
+    &, & .mi {
+      color: inherit;
+    }
+  }
+
+  /*
    * Keyboard tags
    */
   kbd {
