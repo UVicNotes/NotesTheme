@@ -120,24 +120,40 @@
    * Data tables
    */
   table {
-    @include drop-shadow(1);
 
     border-radius: 3px;
+    border: 1px solid $grey-300;
 
     /*
      * Table heading
      */
     th {
-      background: mix($primary, $white, 75%);
-      color: $white;
+      font-weight: bold;
+      border-bottom: 1.5px solid $grey-300;
     }
 
     /*
-     * Table cell
+     * Table Body
      */
-    td {
-      border-top: 1px solid rgba($black, 0.05);
+    tbody {
+      /*
+       * Table row
+       */
+      tr {
+        border-bottom: 1px solid $grey-200;
+        &:last-of-type {
+          border-bottom: none;
+        }
+        &:nth-of-type(odd) {
+          background: $grey-50;
+        }
+        &:hover {
+          background: $grey-100;
+        }
+      }
     }
+
+
   }
 
   /*
